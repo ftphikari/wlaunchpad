@@ -105,6 +105,8 @@ func tempDir() string {
 		return os.Getenv("TEMP")
 	} else if os.Getenv("TMP") != "" {
 		return os.Getenv("TMP")
+	} else if os.Getenv("XDG_RUNTIME_DIR") != "" {
+		return os.Getenv("XDG_RUNTIME_DIR")
 	}
 	return "/tmp"
 }
